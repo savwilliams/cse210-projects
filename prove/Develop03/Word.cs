@@ -1,3 +1,5 @@
+using System.Linq;
+
 public class Word
 //Keeps track of a single word and whether it is shown or hidden.
 {
@@ -20,21 +22,23 @@ public class Word
     }
 
     //setters
-    public void Hide()
-    {
-        _revealed = false;
-    }
+    
 
     //behaviors
+
+    // Hide
+        // Show
+        // Is Hidden
+        // Get Rendered Text
+        
+    public void Hide()
+    {   int length = _word.Length;
+        _word = new string('_', length);
+        _revealed = false;
+    }
     public void Display()
     {
-        if (_revealed)
-        {
-            Console.Write("" + _word);
-        }
-        else
-        {
-            Console.Write("__");
-        }
+        Console.Write($"{_word} ");
     }
+
 } 

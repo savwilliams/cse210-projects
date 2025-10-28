@@ -3,7 +3,6 @@ public class Reference
 //Keeps track of the book, chapter, and verse information.
 {
     //attributes
-
     private string _bookName;
     private int _chapter;
     private int _verse;
@@ -48,9 +47,9 @@ public class Reference
 
     //setters 
 
-    
+    //private string _fullReference;
     //behaviors
-    public string FullReference()
+    public string CompileReference()
     {
         if (_endVerse == 0)        
             return _bookName + " " + _chapter + ":" + _verse;                   
