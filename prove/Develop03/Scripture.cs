@@ -29,16 +29,7 @@ public class Scripture
 
     //setters
 
-
     //behaviors
-        //Hide Words
-        //Get Rendered Text
-        //Is Completely Hidden
-
-    // public string Text
-    // {
-
-    // }
     public void Display()
     {
         Console.Clear();
@@ -52,7 +43,11 @@ public class Scripture
 
     public void HideRandomWords()
     {
-
+        foreach (Word randomWord in _wordList)
+        {
+            randomWord.Display();
+        }
+        word.Hide();
     }
 
     public bool ScriptureFullyHidden()

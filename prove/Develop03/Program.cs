@@ -22,9 +22,9 @@ class Program
 
         int scriptureIndex = randomGenerator.Next(scripturesList.Count);
         Scripture selectedScripture = scripturesList[scriptureIndex];
-        //selectedScripture.Display();
 
         string userInput;
+        
         do
         {
             selectedScripture.Display();
@@ -32,6 +32,34 @@ class Program
             userInput = Console.ReadLine();
 
         }
-        while (userInput != "q" && !selectedScripture.ScriptureFullyHidden());        
-    }        
+        while (userInput != "q" && !selectedScripture.ScriptureFullyHidden());
+
+        
+
+
+        // Word word = new Word("Hello");
+        // Word word1 = new Word("yellow");
+        // Word word2 = new Word("flower");
+
+        // List<Word> _testwordlist = new List<Word>
+        // {
+        //     word, word1, word2
+        // };
+
+        // foreach (Word randomword in _testwordlist)
+        // {
+        //     randomword.Display();
+        // }
+
+        // // pick a random word from the scripture (list of words associated with the scripture)
+        // word1.Hide();
+        // foreach (Word randomword in _testwordlist)
+        // {
+        //     randomword.Display();
+        // }
+
+        
+    }
+
+        
 } 
