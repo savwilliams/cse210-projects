@@ -36,11 +36,16 @@ class Program
             //Reflection
             else if (menuSelection == "r")
             {
+
+                
+
                 Reflection reflectionActivity = new Reflection("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
                 reflectionActivity.GetOpeningMessage();
                 Console.WriteLine(reflectionActivity.GetOpeningMessage());
+                Console.WriteLine(" ");
                 reflectionActivity.GetReadyAnimation();
-                reflectionActivity.GetRandomPrompt();
+                reflectionActivity.GetPrompt1();
+                reflectionActivity.GetPrompt2();
                 reflectionActivity.GetExitMessage();
             }
 
