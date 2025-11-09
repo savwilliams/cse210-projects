@@ -41,6 +41,13 @@ public class Activities
         timer.GetAnimation();
     }
 
+    public void GetAnimation()
+    {
+        
+        Timer timer = new Timer();
+        timer.GetAnimation();
+    }
+
     public void GetExitMessage()
     {
         Console.WriteLine(" ");

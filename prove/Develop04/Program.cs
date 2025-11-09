@@ -54,8 +54,9 @@ class Program
             {
                 Listing listingActivity = new Listing("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
                 listingActivity.GetOpeningMessage();
-                Console.WriteLine(listingActivity.GetOpeningMessage());    
+                Console.WriteLine(listingActivity.GetOpeningMessage());
                 listingActivity.GetReadyAnimation();
+                listingActivity.GetListingPrompt();
                 listingActivity.GetExitMessage();           
             }            
 

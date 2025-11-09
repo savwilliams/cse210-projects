@@ -34,7 +34,7 @@ public class Timer
         {
             string s = animationStrings[i];
             Console.Write(s);
-            Thread.Sleep(75);
+            Thread.Sleep(150);
             Console.Write("\b \b");
 
             i++;

@@ -35,10 +35,10 @@ public class Reflection : Activities
 
         List<string> promptList1 = new List<string>
         {
-            "Think of a time when you stood up for someone else.",
-            "Think of a time when you helped someone in need.",
-            "Think of a time when you did something really difficult.",
-            "Think of a time when you did something truly selfless."
+            "> Think of a time when you stood up for someone else.",
+            "> Think of a time when you helped someone in need.",
+            "> Think of a time when you did something really difficult.",
+            "> Think of a time when you did something truly selfless."
         };
         Random randomPrompt1 = new Random();
         int prompt1Index = randomPrompt1.Next(promptList1.Count);
@@ -53,7 +53,6 @@ public class Reflection : Activities
         Console.Write("You may begin in: ");
         GetCountdown(3);
               
-
     }
     
 
@@ -74,7 +73,7 @@ public class Reflection : Activities
         Random randomPrompt2 = new Random();
         int prompt1Index2 = randomPrompt2.Next(promptList2.Count);
         Console.WriteLine(promptList2[prompt1Index2]);
-        Thread.Sleep(3000);
+        GetAnimation();
     }
 
 }
