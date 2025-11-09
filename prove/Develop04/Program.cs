@@ -4,9 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+
         string menuSelection;
         do
         {
+
             //========= Menu =========
             Console.WriteLine("Menu options:");
             Console.WriteLine("(b) breathing activity)");
@@ -22,19 +24,23 @@ class Program
             //Breathing 
             if (menuSelection == "b")
             {
-                Activities openingMessage = new Activities("Breathing", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
-                openingMessage.GetOpeningMessage();
-                Console.WriteLine(openingMessage.GetOpeningMessage());
-                
+                Breathing breathingActivity = new Breathing("Breathing", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
+                breathingActivity.GetOpeningMessage();
+                Console.WriteLine(breathingActivity.GetOpeningMessage());
+                breathingActivity.GetReadyAnimation();
+                breathingActivity.GetBreathingCountdown();
+                breathingActivity.GetExitMessage();
             
             }
 
             //Reflection
             else if (menuSelection == "r")
             {
-                Activities openingMessage = new Activities("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
-                openingMessage.GetOpeningMessage();
-                Console.WriteLine(openingMessage.GetOpeningMessage());
+                Reflection reflectionActivity = new Reflection("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+                reflectionActivity.GetOpeningMessage();
+                Console.WriteLine(reflectionActivity.GetOpeningMessage());
+                reflectionActivity.GetReadyAnimation();
+                reflectionActivity.GetExitMessage();
             }
 
             //Listing

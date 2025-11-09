@@ -1,3 +1,5 @@
+using System;
+
 //Base class
 
 public class Activities
@@ -7,7 +9,8 @@ public class Activities
     //starting message
     private string _activityName = "";
     private string _activityDescription = "";
-    private int _duration;
+    
+    //private int _duration;
 
     //Getters
     //use getter and setter if one the attributes above need 
@@ -21,7 +24,7 @@ public class Activities
     {
         _activityName = activityName;
         _activityDescription = activityDescription;
-        _duration = 0;
+        //_duration = 0;
     }
 
 
@@ -31,6 +34,22 @@ public class Activities
         return $"Welcome to the {_activityName} Activity.\n{_activityDescription}\nHow long in seconds would you like for your session?";
     }
 
+    public void GetReadyAnimation()
+    {
+        Console.WriteLine("Get ready...");
+        Timer timer = new Timer();
+        timer.GetAnimation();
+    }
+    
+    public void GetExitMessage()
+    {
+        Console.WriteLine("Well done!");
+        Timer timer = new Timer();
+        timer.GetAnimation();
+        Console.WriteLine($"You have completed another [30] seconds of the {_activityName} Activity");
+        timer.GetAnimation();
+
+    }
 
 
 }
