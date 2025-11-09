@@ -40,15 +40,26 @@ public class Activities
         Timer timer = new Timer();
         timer.GetAnimation();
     }
-    
+
     public void GetExitMessage()
     {
+        Console.WriteLine(" ");
         Console.WriteLine("Well done!");
         Timer timer = new Timer();
         timer.GetAnimation();
         Console.WriteLine($"You have completed another [30] seconds of the {_activityName} Activity");
         timer.GetAnimation();
 
+    }
+
+    public void GetCountdown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
     }
 
 

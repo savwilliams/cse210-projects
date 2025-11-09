@@ -16,7 +16,7 @@ public class Timer
 
     public void GetAnimation()
     {
-        
+
         List<string> animationStrings = new List<string>();
         animationStrings.Add("|");
         animationStrings.Add("/");
@@ -45,6 +45,7 @@ public class Timer
             }
         }
     }
+    
 
 
 }

@@ -40,15 +40,18 @@ class Program
                 reflectionActivity.GetOpeningMessage();
                 Console.WriteLine(reflectionActivity.GetOpeningMessage());
                 reflectionActivity.GetReadyAnimation();
+                reflectionActivity.GetRandomPrompt();
                 reflectionActivity.GetExitMessage();
             }
 
             //Listing
             else if (menuSelection == "l")
             {
-                Activities openingMessage = new Activities("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
-                openingMessage.GetOpeningMessage();
-                Console.WriteLine(openingMessage.GetOpeningMessage());               
+                Listing listingActivity = new Listing("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                listingActivity.GetOpeningMessage();
+                Console.WriteLine(listingActivity.GetOpeningMessage());    
+                listingActivity.GetReadyAnimation();
+                listingActivity.GetExitMessage();           
             }            
 
         }

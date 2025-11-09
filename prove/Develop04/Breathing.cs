@@ -21,22 +21,12 @@ public class Breathing : Activities
     //Methods
     public void GetBreathingCountdown()
     {
-        Console.Write("Breathe in ...");
-        for (int i = 5; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
-        Console.WriteLine();
+        Console.Write("Breathe in ...");        
+        GetCountdown(3);
+        Console.WriteLine("");
         Console.Write("Breathe out ...");
-        for (int i = 5; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
-        Console.WriteLine();
+        GetCountdown(3);
+        Console.WriteLine("");
     }
 
 }

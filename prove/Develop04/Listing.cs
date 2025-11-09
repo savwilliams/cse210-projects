@@ -1,20 +1,23 @@
 //Derived Class
 
-// public class Listing : Activities
-// {
-//     //Attributes
+public class Listing : Activities
+{
+    //Attributes
 
 
-//     //Getters
+    //Getters
 
 
-//     //Setters
+    //Setters
 
 
-//     //Constructors
+    //Constructors
+    public Listing(string activityName, string activityDescription) :base(activityName, activityDescription)
+        {
+            
+        }
+
+    //Methods
 
 
-//     //Methods
-
-
-// }
+}
