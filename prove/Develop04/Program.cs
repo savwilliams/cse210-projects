@@ -24,11 +24,16 @@ class Program
             //Breathing 
             if (menuSelection == "b")
             {
-                Breathing breathingActivity = new Breathing("Breathing", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
+                Breathing breathingActivity = new Breathing("Breathing", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.",0);
                 breathingActivity.GetOpeningMessage();
                 Console.WriteLine(breathingActivity.GetOpeningMessage());
+                breathingActivity.GetDuration();
                 breathingActivity.GetReadyAnimation();
-                breathingActivity.GetBreathingCountdown();
+                breathingActivity.SetTime();
+                while (!breathingActivity.IsExpired())
+                {
+                    breathingActivity.GetBreathingCountdown();
+                }
                 breathingActivity.GetExitMessage();
             
             }
@@ -36,27 +41,33 @@ class Program
             //Reflection
             else if (menuSelection == "r")
             {
-
-                
-
-                Reflection reflectionActivity = new Reflection("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+                Reflection reflectionActivity = new Reflection("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.",0);
                 reflectionActivity.GetOpeningMessage();
                 Console.WriteLine(reflectionActivity.GetOpeningMessage());
-                Console.WriteLine(" ");
+                reflectionActivity.GetDuration();
                 reflectionActivity.GetReadyAnimation();
                 reflectionActivity.GetPrompt1();
-                reflectionActivity.GetPrompt2();
+                reflectionActivity.SetTime();
+                while (!reflectionActivity.IsExpired())
+                {
+                    reflectionActivity.GetPrompt2();
+                }                
                 reflectionActivity.GetExitMessage();
             }
 
             //Listing
             else if (menuSelection == "l")
             {
-                Listing listingActivity = new Listing("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                Listing listingActivity = new Listing("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.",0);
                 listingActivity.GetOpeningMessage();
                 Console.WriteLine(listingActivity.GetOpeningMessage());
+                listingActivity.GetDuration();
                 listingActivity.GetReadyAnimation();
-                listingActivity.GetListingPrompt();
+                listingActivity.SetTime();
+                while (!listingActivity.IsExpired())
+                {
+                    listingActivity.GetListingPrompt();
+                }                  
                 listingActivity.GetExitMessage();           
             }            
 

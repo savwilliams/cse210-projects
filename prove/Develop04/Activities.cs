@@ -9,22 +9,27 @@ public class Activities
     //starting message
     private string _activityName = "";
     private string _activityDescription = "";
+
+    private int _duration;
     
-    //private int _duration;
+    private DateTime _futureTime;
 
     //Getters
     //use getter and setter if one the attributes above need 
     //to be used in a method in another class
-
+    public DateTime GetFutureTime()
+    {
+        return _futureTime;
+    }
     //Setters
 
 
     //Constructors
-    public Activities(string activityName, string activityDescription)
+    public Activities(string activityName, string activityDescription, int duration)
     {
         _activityName = activityName;
         _activityDescription = activityDescription;
-        //_duration = 0;
+        _duration = duration;
     }
 
 
@@ -34,28 +39,61 @@ public class Activities
         return $"Welcome to the {_activityName} Activity.\n{_activityDescription}\nHow long in seconds would you like for your session?";
     }
 
-    public void GetReadyAnimation()
+    public int GetDuration()
     {
-        Console.WriteLine("Get ready...");
-        Timer timer = new Timer();
-        timer.GetAnimation();
+        string duration = Console.ReadLine();
+        _duration = Int32.Parse(duration);
+        return _duration;        
+        
     }
 
     public void GetAnimation()
     {
+
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(3);
+
+        int i = 0;
+        while (DateTime.Now < endTime)
+        {
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(150);
+            Console.Write("\b \b");
+
+            i++;
+
+            if (i >= animationStrings.Count)
+            {
+                i = 0;
+            }
+        }
+    }
+    
+    public void GetReadyAnimation()
+    {
+        Console.WriteLine("Get ready...");
         
-        Timer timer = new Timer();
-        timer.GetAnimation();
+        GetAnimation();
     }
 
     public void GetExitMessage()
     {
         Console.WriteLine(" ");
         Console.WriteLine("Well done!");
-        Timer timer = new Timer();
-        timer.GetAnimation();
-        Console.WriteLine($"You have completed another [30] seconds of the {_activityName} Activity");
-        timer.GetAnimation();
+        
+        GetAnimation();
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_activityName} Activity");
+        GetAnimation();
 
     }
 
@@ -69,5 +107,16 @@ public class Activities
         }
     }
 
+    public void SetTime()
+    {
+        DateTime startTime = DateTime.Now;
+        _futureTime = startTime.AddSeconds(_duration);
+        
+    }
+
+    public bool IsExpired()
+    {
+        return DateTime.Now >= _futureTime;
+    }
 
 }

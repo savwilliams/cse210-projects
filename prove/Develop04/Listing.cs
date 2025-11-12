@@ -12,7 +12,7 @@ public class Listing : Activities
 
 
     //Constructors
-    public Listing(string activityName, string activityDescription) :base(activityName, activityDescription)
+    public Listing(string activityName, string activityDescription, int duration) :base(activityName, activityDescription, duration)
         {
             
         }
@@ -34,13 +34,16 @@ public class Listing : Activities
         };
         Random randomListingPrompt = new Random();
         int promptListingIndex = randomListingPrompt.Next(promptList.Count);
-        Console.WriteLine(promptList[promptListingIndex]);
+        Console.WriteLine($"--- {promptList[promptListingIndex]} ---");
 
         Console.WriteLine(" ");
-        Console.Write("You may begin in: ");
+        Console.WriteLine("You may begin in: ");
         GetCountdown(3);
-        Console.WriteLine(">");
+        Console.Write(">");
         Console.ReadLine();
+        Console.WriteLine("");
+        Console.WriteLine("You listed {int} items!");
+        
     }
     
 

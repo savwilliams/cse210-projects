@@ -12,7 +12,7 @@ public class Reflection : Activities
 
 
     //Constructors
-    public Reflection(string activityName, string activityDescription) : base(activityName, activityDescription)
+    public Reflection(string activityName, string activityDescription, int duration) : base(activityName, activityDescription, duration)
     {
 
     }
@@ -50,7 +50,7 @@ public class Reflection : Activities
         Console.WriteLine(" ");
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.WriteLine(" ");
-        Console.Write("You may begin in: ");
+        Console.WriteLine("You may begin in: ");
         GetCountdown(3);
               
     }
@@ -72,8 +72,10 @@ public class Reflection : Activities
         };
         Random randomPrompt2 = new Random();
         int prompt1Index2 = randomPrompt2.Next(promptList2.Count);
-        Console.WriteLine(promptList2[prompt1Index2]);
+        Console.WriteLine(" ");
+        Console.Write($"--- {promptList2[prompt1Index2]} ---");
         GetAnimation();
+        Console.WriteLine(" ");
     }
 
 }

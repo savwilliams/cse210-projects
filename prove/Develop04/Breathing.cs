@@ -13,7 +13,7 @@ public class Breathing : Activities
 
 
     //Constructors
-    public Breathing(string activityName, string activityDescription) :base(activityName, activityDescription)
+    public Breathing(string activityName, string activityDescription, int duration) :base(activityName, activityDescription, duration)
     {
         
     }
