@@ -1,16 +1,12 @@
 using System;
 //Derived Class
-
 public class Breathing : Activities
 {
     //Attributes
 
-
     //Getters
 
-
     //Setters
-
 
     //Constructors
     public Breathing(string activityName, string activityDescription, int duration) :base(activityName, activityDescription, duration)
@@ -22,11 +18,13 @@ public class Breathing : Activities
     public void GetBreathingCountdown()
     {
         Console.Write("Breathe in ...");        
-        GetCountdown(3);
+        GetCountdown(4);
+        Console.WriteLine("");
+        Console.Write("Hold ...");
+        GetCountdown(7);
         Console.WriteLine("");
         Console.Write("Breathe out ...");
-        GetCountdown(3);
+        GetCountdown(8);
         Console.WriteLine("");
     }
-
 }

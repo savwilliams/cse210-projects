@@ -1,30 +1,28 @@
 using System;
-
 class Program
 {
     static void Main(string[] args)
     {
-
         string menuSelection;
         do
         {
-
-            //========= Menu =========
+            //Menu
             Console.WriteLine("Menu options:");
-            Console.WriteLine("(b) breathing activity)");
+            Console.WriteLine("(b) breathing activity");
             Console.WriteLine("(r) reflection activity");
             Console.WriteLine("(l) listing activity");
+            Console.WriteLine("(a) affirmation activity");
             Console.WriteLine("(q) Quit");
             Console.Write("Select a choice from the menu: ");
             
             menuSelection = Console.ReadLine();
             Console.WriteLine("");
 
-            //======== CALL ACTIONS =========
+            //Call actions
             //Breathing 
             if (menuSelection == "b")
             {
-                Breathing breathingActivity = new Breathing("Breathing", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.",0);
+                Breathing breathingActivity = new Breathing("Breathing", "This activity will help you relax by walking you through inhaling, holding, and exhaling. Clear your mind and focus on your breathing.", 0);
                 breathingActivity.GetOpeningMessage();
                 Console.WriteLine(breathingActivity.GetOpeningMessage());
                 breathingActivity.GetDuration();
@@ -35,13 +33,12 @@ class Program
                     breathingActivity.GetBreathingCountdown();
                 }
                 breathingActivity.GetExitMessage();
-            
             }
 
             //Reflection
             else if (menuSelection == "r")
             {
-                Reflection reflectionActivity = new Reflection("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.",0);
+                Reflection reflectionActivity = new Reflection("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", 0);
                 reflectionActivity.GetOpeningMessage();
                 Console.WriteLine(reflectionActivity.GetOpeningMessage());
                 reflectionActivity.GetDuration();
@@ -51,26 +48,44 @@ class Program
                 while (!reflectionActivity.IsExpired())
                 {
                     reflectionActivity.GetPrompt2();
-                }                
+                }
                 reflectionActivity.GetExitMessage();
             }
 
             //Listing
             else if (menuSelection == "l")
             {
-                Listing listingActivity = new Listing("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.",0);
+                Listing listingActivity = new Listing("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 0);
                 listingActivity.GetOpeningMessage();
                 Console.WriteLine(listingActivity.GetOpeningMessage());
                 listingActivity.GetDuration();
                 listingActivity.GetReadyAnimation();
+                listingActivity.GetListingPrompt();
                 listingActivity.SetTime();
                 while (!listingActivity.IsExpired())
                 {
-                    listingActivity.GetListingPrompt();
-                }                  
-                listingActivity.GetExitMessage();           
-            }            
+                    listingActivity.GetUserList();
+                }
+                listingActivity.GetListCount();
+                listingActivity.GetExitMessage();
+            }       
 
+            //Affirmation
+            else if (menuSelection == "a")
+            {
+                Affirmation affirmationActivity = new Affirmation("Affiration", "This activity will help you find peace during anxiety or stress by having you repeat affirmations out loud.",0);
+                affirmationActivity.GetOpeningMessage();
+                Console.WriteLine(affirmationActivity.GetOpeningMessage());
+                affirmationActivity.GetDuration();
+                affirmationActivity.GetReadyAnimation();
+                affirmationActivity.GetAffirmationIntro();
+                affirmationActivity.SetTime();
+                while (!affirmationActivity.IsExpired())
+                {
+                    affirmationActivity.GetRandomAffirmation();
+                }                  
+                affirmationActivity.GetExitMessage();           
+            }   
         }
         while (menuSelection != "q");
     }

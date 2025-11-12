@@ -4,12 +4,9 @@ public class Reflection : Activities
 {
     //Attributes
 
-
     //Getters
 
-
     //Setters
-
 
     //Constructors
     public Reflection(string activityName, string activityDescription, int duration) : base(activityName, activityDescription, duration)
@@ -17,16 +14,7 @@ public class Reflection : Activities
 
     }
 
-
-    //Methods
-    // Get a random prompt
-    // Get a random question about the prompt
-    // Display the prompt
-    // Display questions about the prompt and get answers
-    
-
-
-    
+    //Methods   
     public void GetPrompt1()
     {
         Console.WriteLine(" ");
@@ -40,6 +28,7 @@ public class Reflection : Activities
             "> Think of a time when you did something really difficult.",
             "> Think of a time when you did something truly selfless."
         };
+
         Random randomPrompt1 = new Random();
         int prompt1Index = randomPrompt1.Next(promptList1.Count);
         Console.WriteLine(promptList1[prompt1Index]);
@@ -47,15 +36,12 @@ public class Reflection : Activities
         Console.WriteLine(" ");
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.Read();
-        Console.WriteLine(" ");
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.WriteLine(" ");
         Console.WriteLine("You may begin in: ");
-        GetCountdown(3);
-              
+        GetCountdown(5);              
     }
     
-
     public void GetPrompt2()
     {
         List<string> promptList2 = new List<string>
@@ -70,6 +56,7 @@ public class Reflection : Activities
             "What did you learn about yourself through this experience?",
             "How can you keep this experience in mind in the future?"
         };
+
         Random randomPrompt2 = new Random();
         int prompt1Index2 = randomPrompt2.Next(promptList2.Count);
         Console.WriteLine(" ");
@@ -77,5 +64,4 @@ public class Reflection : Activities
         GetAnimation();
         Console.WriteLine(" ");
     }
-
 }
