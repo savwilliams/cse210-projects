@@ -4,7 +4,6 @@ public class Shape
 {
     //Attributes
     private string _color;
-    private double _area;
 
     //Getters
     public string GetColor()
@@ -28,7 +27,8 @@ public class Shape
     //Methods
     public virtual double GetArea()
         {
-            return _area;
+            return 0;
         }
-
+        //This can also be written as abstract:
+        //public abstract double GetArea();
 }
