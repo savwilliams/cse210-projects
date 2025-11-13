@@ -1,11 +1,23 @@
 //Derived Class
 
-//Attributes
+public class Circle : Shape
+{
+    //Attributes
+    private double _radius;
+    
+    //Getters
 
-//Getters
+    //Setters
 
-//Setters
+    //Constructors
+    public Circle(string color, double radius) : base(color)
+    {
+        _radius = radius;
+        
+    }
 
-//Constructors
-
-//Methods
+    //Methods
+    public override double GetArea(){
+        return Math.Round(Math.PI * _radius * _radius, 2);
+    }
+}

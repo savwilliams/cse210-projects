@@ -1,11 +1,24 @@
 //Derived Class
+public class Rectangle : Shape
+{
+    //Attributes
+    private double _length;
+    private double _width;
 
-//Attributes
+    //Getters
 
-//Getters
+    //Setters
 
-//Setters
+    //Constructors
+    public Rectangle(string color, double length, double width) : base(color)
+    {
+        _length = length;
+        _width = width;
+    }
 
-//Constructors
+    //Methods
+    public override double GetArea(){
+        return _length * _width;
+    }
+}
 
-//Methods
