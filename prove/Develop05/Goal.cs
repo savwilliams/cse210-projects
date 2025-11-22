@@ -8,26 +8,17 @@ public abstract class Goal
 
 
     //getters
-    public string Name
+    public string GetName()
     {
-        get
-        {
-            return _name;
-        }
+        return _name;
     }
-        public string Description
+        public string GetDescription()
     {
-        get
-        {
-            return _description;
-        }
+        return _description;
     }
-        public int Points
+        public int GetPoints()
     {
-        get
-        {
-            return _points;
-        }
+        return _points;
     }
 
     //setters

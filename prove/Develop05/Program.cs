@@ -38,7 +38,7 @@ class Program
                 string name = Console.ReadLine();      
                 Console.Write("What is a short description of it? ");
                 string description = Console.ReadLine();      
-                Console.Write("How many points associated with this goal? ");
+                Console.Write("How many points are associated with this goal? ");
                 string pointsInput = Console.ReadLine();
                 int points = int.Parse(pointsInput);
 
@@ -58,7 +58,15 @@ class Program
                 //checklist goal
                 else if (goalType == "c")
                 {
-                    goalsList.Add(goal = new ChecklistGoal(name, description, points));
+                    Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                    string timesUntilCompletionInput = Console.ReadLine();
+                    int timesUntilCompletion = int.Parse(timesUntilCompletionInput);
+
+                    Console.Write("What is the bonus for accomplishing it that many times? ");
+                    string bonusPointsInput = Console.ReadLine();
+                    int bonusPoints = int.Parse(bonusPointsInput);
+
+                    goalsList.Add(goal = new ChecklistGoal(name, description, points, timesUntilCompletion, bonusPoints));
                 }
             }
 

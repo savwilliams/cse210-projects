@@ -19,6 +19,6 @@ public class SimpleGoal : Goal
     //methods
     public override string DisplayGoal()
     {
-        return $"[ ] {Name} ({Description})";
+        return $"[ ] {GetName()} ({GetDescription()})";
     }
 }

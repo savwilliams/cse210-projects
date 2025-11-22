@@ -19,7 +19,7 @@ public class EternalGoal : Goal
     //methods
     public override string DisplayGoal()
     {
-        return $"[ ] {Name} ({Description})";
+        return $"[ ] {GetName()} ({GetDescription()})";
     }
 
 }
