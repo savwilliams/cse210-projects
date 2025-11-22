@@ -4,6 +4,7 @@ public class ChecklistGoal : Goal
     //attributes
     private int _timesUntilCompletion;
     private int _bonusPoints;
+    private int _timesCompleted;
 
     //getters
     public int GetTimesUntilCompletion()
@@ -13,6 +14,10 @@ public class ChecklistGoal : Goal
     public int GetBonusPoints()
     {
         return _bonusPoints;
+    }
+    public int GetTimesCompleted()
+    {
+        return _timesCompleted;
     }
 
     //setters
@@ -28,7 +33,26 @@ public class ChecklistGoal : Goal
     //methods
     public override string DisplayGoal()
     {
-        return $"[ ] {GetName()} ({GetDescription()}) --- Currently completed: []/{GetTimesUntilCompletion()} ";
+        return $"[ ] {GetName()} ({GetDescription()}) --- Currently completed: {GetTimesCompleted()}/{GetTimesUntilCompletion()} ";
+    }
+
+    public override int RecordEvent()
+    {
+        if (_timesCompleted >= _timesUntilCompletion)
+        {
+            return 0;
+        }
+
+        _timesCompleted++;
+
+        if (_timesCompleted == _timesUntilCompletion)
+        {
+            return GetPoints() + _bonusPoints;
+        }
+        else
+        {
+            return GetPoints();
+        }
     }
 
 }

@@ -2,7 +2,7 @@
 public class SimpleGoal : Goal
 {
     //attributes
-
+    private bool _isComplete;
 
     //getters
 
@@ -20,5 +20,18 @@ public class SimpleGoal : Goal
     public override string DisplayGoal()
     {
         return $"[ ] {GetName()} ({GetDescription()})";
+    }
+
+    public override int RecordEvent()
+    {
+        if (_isComplete == true)
+        {
+            return 0;
+        }
+        else
+        {
+            _isComplete = true;
+            return GetPoints();
+        }
     }
 }

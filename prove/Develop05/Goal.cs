@@ -4,6 +4,7 @@ public abstract class Goal
     private string _name;
     private string _description;
     private int _points;
+    
     //attributes
 
 
@@ -12,11 +13,11 @@ public abstract class Goal
     {
         return _name;
     }
-        public string GetDescription()
+    public string GetDescription()
     {
         return _description;
     }
-        public int GetPoints()
+    public int GetPoints()
     {
         return _points;
     }
@@ -35,5 +36,6 @@ public abstract class Goal
 
     //methods
     public abstract string DisplayGoal();
+    public abstract int RecordEvent();
 
 }

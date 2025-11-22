@@ -6,10 +6,11 @@ class Program
     {
         string menuSelection;
         List<Goal> goalsList = new List<Goal>();
+        int totalPoints = 0;
         do
         {
             //Menu
-            Console.WriteLine("You have [0] points.");
+            Console.WriteLine($"You have {totalPoints} points. ");
             Console.WriteLine("Menu options:");
             Console.WriteLine("(c) create new goal");
             Console.WriteLine("(li) list goals");
@@ -98,7 +99,14 @@ class Program
             //record event
             else if (menuSelection == "r")
             {
-         
+                Console.WriteLine("Which goal did you accomplish? ");
+                int listIndex = int.Parse(Console.ReadLine()) - 1;
+                Goal selectedGoal = goalsList[listIndex];
+                int earnedPoints = selectedGoal.RecordEvent();
+                totalPoints += earnedPoints;
+
+                Console.WriteLine($"Congratulations! You earned {earnedPoints} points! ");
+                
             }   
         }
         while (menuSelection != "q");

@@ -22,4 +22,9 @@ public class EternalGoal : Goal
         return $"[ ] {GetName()} ({GetDescription()})";
     }
 
+    public override int RecordEvent()
+    {
+       return GetPoints();
+    }
+
 }
