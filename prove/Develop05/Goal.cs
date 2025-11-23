@@ -32,12 +32,11 @@ public abstract class Goal
         _description = description;
         _points = points;
     }
-
+    
 
     //methods
     public abstract string DisplayGoal();
     public abstract int RecordEvent();
     public abstract bool IsComplete();
     public abstract string GetStringRepresentation();
-
 }

@@ -11,6 +11,9 @@ class Program
         {
             //Menu
             Console.WriteLine($"You have {totalPoints} points. ");
+            Level level = new Level();
+            Console.WriteLine($"Your level is: {level.GetLevel(totalPoints)} ");
+
             Console.WriteLine("Menu options:");
             Console.WriteLine("(c) create new goal");
             Console.WriteLine("(li) list goals");
@@ -27,7 +30,7 @@ class Program
             //create new goal
             if (menuSelection == "c")
             {
-                Console.WriteLine("The types of goals are:");
+                Console.WriteLine("The type of goals are:");
                 Console.WriteLine("(s) simple goal");
                 Console.WriteLine("(e) eternal goal");
                 Console.WriteLine("(c) checklist goal");
@@ -42,13 +45,11 @@ class Program
                 Console.Write("How many points are associated with this goal? ");
                 string pointsInput = Console.ReadLine();
                 int points = int.Parse(pointsInput);
-
                 
                 Goal goal;
                 //simple goal
                 if (goalType == "s")
                 {
-
                     goalsList.Add(goal = new SimpleGoal(name, description, points));
                 }
                 //eternal goal
@@ -80,8 +81,7 @@ class Program
                 {
                     Console.WriteLine($"{index}. {goal.DisplayGoal()}");
                     index++;
-                }
-                
+                }                
             }
 
             //save goals
@@ -154,7 +154,6 @@ class Program
                     }
 
                     Console.WriteLine("Loaded goals count: " + goalsList.Count);
-
                 }
 
             }   
@@ -177,11 +176,9 @@ class Program
                 int earnedPoints = selectedGoal.RecordEvent();
                 totalPoints += earnedPoints;
 
-                Console.WriteLine($"Congratulations! You earned {earnedPoints} points! ");
-                
+                Console.WriteLine($"Congratulations! You earned {earnedPoints} points! ");                
             }   
         }
-        while (menuSelection != "q");
-    
+        while (menuSelection != "q");    
     }
 }

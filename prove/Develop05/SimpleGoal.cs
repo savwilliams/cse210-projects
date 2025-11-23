@@ -19,6 +19,7 @@ public class SimpleGoal : Goal
     {
 
     }
+    
 
     //methods
     public override string DisplayGoal()

@@ -6,6 +6,7 @@ public class ChecklistGoal : Goal
     private int _bonusPoints;
     private int _timesCompleted;
 
+
     //getters
     public int GetTimesUntilCompletion()
     {
@@ -20,20 +21,22 @@ public class ChecklistGoal : Goal
         return _timesCompleted;
     }
 
+
     //setters
     public void SetTimesCompleted(int value)
     {
         _timesCompleted = value;
     }
 
+
     //constructors
     public ChecklistGoal(string name, string description, int points, int bonusPoints, int timesUntilCompletion, int timesCompleted) : base(name, description, points)
     {
         _bonusPoints = bonusPoints;
         _timesUntilCompletion = timesUntilCompletion;
-        _timesCompleted = timesCompleted;
-         
+        _timesCompleted = timesCompleted;         
     }
+
 
     //methods
     public override string DisplayGoal()
@@ -78,6 +81,4 @@ public class ChecklistGoal : Goal
     {
         return $"ChecklistGoal:{GetName()}|{GetDescription()}|{GetPoints()}|{GetBonusPoints()}|{GetTimesUntilCompletion()}|{GetTimesCompleted()}";
     }
-
-
 }
