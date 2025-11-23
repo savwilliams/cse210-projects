@@ -8,6 +8,10 @@ public class SimpleGoal : Goal
 
 
     //setters
+    public void SetIsComplete(bool value)
+    {
+        _isComplete = value;
+    }
 
 
     //constructors

@@ -21,13 +21,18 @@ public class ChecklistGoal : Goal
     }
 
     //setters
-
+    public void SetTimesCompleted(int value)
+    {
+        _timesCompleted = value;
+    }
 
     //constructors
-    public ChecklistGoal(string name, string description, int points, int timesUntilCompletion, int bonusPoints) : base(name, description, points)
+    public ChecklistGoal(string name, string description, int points, int bonusPoints, int timesUntilCompletion, int timesCompleted) : base(name, description, points)
     {
-         _timesUntilCompletion = timesUntilCompletion;
-         _bonusPoints = bonusPoints;
+        _bonusPoints = bonusPoints;
+        _timesUntilCompletion = timesUntilCompletion;
+        _timesCompleted = timesCompleted;
+         
     }
 
     //methods
@@ -71,7 +76,8 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{GetName()}|{GetDescription()}|{GetPoints()}|{GetBonusPoints()}|{GetTimesUntilCompletion()}|{GetTimesCompleted()}";
+        return $"ChecklistGoal:{GetName()}|{GetDescription()}|{GetPoints()}|{GetBonusPoints()}|{GetTimesUntilCompletion()}|{GetTimesCompleted()}";
     }
+
 
 }

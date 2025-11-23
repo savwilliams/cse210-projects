@@ -67,7 +67,7 @@ class Program
                     string bonusPointsInput = Console.ReadLine();
                     int bonusPoints = int.Parse(bonusPointsInput);
 
-                    goalsList.Add(goal = new ChecklistGoal(name, description, points, timesUntilCompletion, bonusPoints));
+                    goalsList.Add(goal = new ChecklistGoal(name, description, points, bonusPoints, timesUntilCompletion, 0));
                 }
             }
 
@@ -103,7 +103,60 @@ class Program
             //load goals
             else if (menuSelection == "lo")
             {
-         
+                Console.WriteLine("What is the filename for the goal file? ");
+                string filename = Console.ReadLine();
+
+                string[] lines = System.IO.File.ReadAllLines(filename);
+                totalPoints = int.Parse(lines[0]);
+
+                for (int index = 1; index < lines.Length; index++)
+                {
+                    string line = lines[index];
+                    string[] parts = line.Split(":");
+
+                    string goalType = parts[0];
+                    string goalInfo = parts[1];
+
+                    string[] goalValues = goalInfo.Split("|");
+
+                    if (goalType == "SimpleGoal")
+                    {
+                        string name = goalValues[0];
+                        string description = goalValues[1];
+                        int points = int.Parse(goalValues[2]);
+                        bool isComplete = bool.Parse(goalValues[3]);
+
+                        SimpleGoal goal = new SimpleGoal(name, description, points);
+                        goal.SetIsComplete(isComplete);
+                        goalsList.Add(goal);
+                    }
+                    else if(goalType == "EternalGoal")
+                    {
+                        string name = goalValues[0];
+                        string description = goalValues[1];
+                        int points = int.Parse(goalValues[2]);
+
+                        goalsList.Add(new EternalGoal(name, description, points));
+                    }
+                    else if(goalType == "ChecklistGoal")
+                    {
+                        string name = goalValues[0];
+                        string description = goalValues[1];
+                        int points = int.Parse(goalValues[2]);
+                        int bonusPoints = int.Parse(goalValues[3]);
+                        int timesUntilCompletion = int.Parse(goalValues[4]);
+                        int timesCompleted = int.Parse(goalValues[5]);
+                        
+                        ChecklistGoal goal = new ChecklistGoal(name, description, points, bonusPoints, timesUntilCompletion, timesCompleted);
+                        goal.SetTimesCompleted(timesCompleted);
+
+                        goalsList.Add(goal);
+                    }
+
+                    Console.WriteLine("Loaded goals count: " + goalsList.Count);
+
+                }
+
             }   
 
             //record event
