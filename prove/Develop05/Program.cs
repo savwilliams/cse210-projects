@@ -87,7 +87,17 @@ class Program
             //save goals
             else if (menuSelection == "s")
             {
+                Console.WriteLine("What is the filename for the goal file? ");
+                string filename = Console.ReadLine();
 
+                using (StreamWriter outputFile = new StreamWriter(filename))
+                {
+                    outputFile.WriteLine(totalPoints);
+                    foreach (Goal goal in goalsList)
+                    {
+                        outputFile.WriteLine(goal.GetStringRepresentation());
+                    }
+                }
             }       
 
             //load goals

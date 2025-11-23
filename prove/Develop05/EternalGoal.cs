@@ -32,4 +32,9 @@ public class EternalGoal : Goal
         return false;
     }
 
+    public override string GetStringRepresentation()
+    {
+        return $"EternalGoal:{GetName()}|{GetDescription()}|{GetPoints()}";
+    }
+
 }

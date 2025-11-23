@@ -69,4 +69,9 @@ public class ChecklistGoal : Goal
         return _timesCompleted >= _timesUntilCompletion;
     }
 
+    public override string GetStringRepresentation()
+    {
+        return $"SimpleGoal:{GetName()}|{GetDescription()}|{GetPoints()}|{GetBonusPoints()}|{GetTimesUntilCompletion()}|{GetTimesCompleted()}";
+    }
+
 }

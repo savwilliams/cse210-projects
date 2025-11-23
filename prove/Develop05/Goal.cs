@@ -38,5 +38,6 @@ public abstract class Goal
     public abstract string DisplayGoal();
     public abstract int RecordEvent();
     public abstract bool IsComplete();
+    public abstract string GetStringRepresentation();
 
 }
