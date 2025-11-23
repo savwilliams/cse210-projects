@@ -19,7 +19,16 @@ public class SimpleGoal : Goal
     //methods
     public override string DisplayGoal()
     {
-        return $"[ ] {GetName()} ({GetDescription()})";
+        string x;
+        if (_isComplete)
+        {
+            x = "X";
+        }
+        else
+        {
+            x = " ";
+        }
+        return $"[{x}] {GetName()} ({GetDescription()})";
     }
 
     public override int RecordEvent()
@@ -33,5 +42,10 @@ public class SimpleGoal : Goal
             _isComplete = true;
             return GetPoints();
         }
+    }
+
+    public override bool IsComplete()
+    {
+        return _isComplete;
     }
 }

@@ -33,7 +33,16 @@ public class ChecklistGoal : Goal
     //methods
     public override string DisplayGoal()
     {
-        return $"[ ] {GetName()} ({GetDescription()}) --- Currently completed: {GetTimesCompleted()}/{GetTimesUntilCompletion()} ";
+        string x;
+        if (_timesCompleted >= _timesUntilCompletion)
+        {
+            x = "X";
+        }
+        else
+        {
+            x = " ";
+        }
+        return $"[{x}] {GetName()} ({GetDescription()}) --- currently completed: {GetTimesCompleted()}/{GetTimesUntilCompletion()} ";
     }
 
     public override int RecordEvent()
@@ -53,6 +62,11 @@ public class ChecklistGoal : Goal
         {
             return GetPoints();
         }
+    }
+
+    public override bool IsComplete()
+    {
+        return _timesCompleted >= _timesUntilCompletion;
     }
 
 }

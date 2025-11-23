@@ -27,4 +27,9 @@ public class EternalGoal : Goal
        return GetPoints();
     }
 
+    public override bool IsComplete()
+    {
+        return false;
+    }
+
 }

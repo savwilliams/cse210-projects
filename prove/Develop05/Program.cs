@@ -99,6 +99,15 @@ class Program
             //record event
             else if (menuSelection == "r")
             {
+                Console.WriteLine("The goals are: ");
+                int index = 1;
+                foreach (Goal goal in goalsList)
+                {
+                    Console.WriteLine($"{index}. {goal.DisplayGoal()}");
+                    index++;
+                }     
+
+                Console.WriteLine("")   ;
                 Console.WriteLine("Which goal did you accomplish? ");
                 int listIndex = int.Parse(Console.ReadLine()) - 1;
                 Goal selectedGoal = goalsList[listIndex];

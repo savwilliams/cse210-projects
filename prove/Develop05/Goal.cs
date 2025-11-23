@@ -37,5 +37,6 @@ public abstract class Goal
     //methods
     public abstract string DisplayGoal();
     public abstract int RecordEvent();
+    public abstract bool IsComplete();
 
 }
