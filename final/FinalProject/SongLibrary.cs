@@ -1,10 +1,13 @@
 public class SongLibrary
 {
     //attributes
-    private List<Song> fullSongList;
+    private List<Song> _fullSongList;
 
     //getters
-
+    public List<Song> GetFullSongList()
+    {
+        return _fullSongList;
+    } 
 
     //setters
 
@@ -12,7 +15,7 @@ public class SongLibrary
     //constructors
     public SongLibrary()
     {
-        fullSongList = new List<Song>();
+        _fullSongList = new List<Song>();
     }
 
     //methods
