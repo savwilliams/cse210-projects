@@ -21,8 +21,9 @@ public class Playlist
     }
 
     //constructors
-    public Playlist()
+    public Playlist(string playlistName)
     {
+        _playlistName = playlistName;
         _songList = new List<Song>();
     }
 

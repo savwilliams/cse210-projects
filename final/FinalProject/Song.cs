@@ -55,7 +55,15 @@ public class Song
 
 
     //constructors
-    
+    public Song(string title, string artist, string genre, string mood, string energy)
+    {
+        _title = title;
+        _artist = artist;
+        _genre = genre;
+        _mood = mood;
+        _energy = energy;        
+    }
+
 
     //methods
 
