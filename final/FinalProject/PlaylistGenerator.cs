@@ -18,6 +18,13 @@ public class PlaylistGenerator
     }
 
     //methods
-
+    public void SetFilters()
+    {
+        //placeholder
+    }
+    public void CompilePlaylist()
+    {
+        //placeholder
+    }
 
 }

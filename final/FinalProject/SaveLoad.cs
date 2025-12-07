@@ -12,6 +12,17 @@ public class SaveLoad
 
 
     //methods
-
+    public void LoadSongs()
+    {
+        //placeholder
+    }
+    public void SavePlaylist()
+    {
+        //placeholder
+    }
+    public void LoadPlaylist()
+    {
+        //placeholder
+    }
 
 }

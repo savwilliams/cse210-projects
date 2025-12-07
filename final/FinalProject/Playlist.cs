@@ -28,6 +28,17 @@ public class Playlist
     }
 
     //methods
-
+    public void AddSong()
+    {
+        //placeholder
+    }
+    public void RemoveSong()
+    {
+        //placeholder
+    }
+    public void DisplayPlaylist()
+    {
+        //placeholder
+    }
 
 }

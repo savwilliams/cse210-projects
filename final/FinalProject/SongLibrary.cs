@@ -19,6 +19,9 @@ public class SongLibrary
     }
 
     //methods
-
+    public void LoadSongs()
+    {
+        //placeholder
+    }
 
 }
