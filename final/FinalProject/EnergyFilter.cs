@@ -2,7 +2,7 @@
 public class EnergyFilter : SongFilter
 {
     //attributes
-    private int _selectedEnergy; //may need to change to string later? 
+    private string _selectedEnergy; 
 
     //getters
 
@@ -11,16 +11,23 @@ public class EnergyFilter : SongFilter
 
 
     //constructors
-    public EnergyFilter(int selectedEnergy)
+    public EnergyFilter(string selectedEnergy)
     {
         _selectedEnergy = selectedEnergy;
     }
     
 
     //methods
-    public override bool ApplyFilter()
+    public override bool ApplyFilter(Song song)
     {
-        return true;
+        if(song.GetEnergy() == _selectedEnergy)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

@@ -18,9 +18,16 @@ public class GenreFilter : SongFilter
     
 
     //methods
-    public override bool ApplyFilter()
+    public override bool ApplyFilter(Song song)
     {
-        return true;
+        if(song.GetGenre() == _selectedGenre)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

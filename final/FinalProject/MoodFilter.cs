@@ -18,9 +18,16 @@ public class MoodFilter : SongFilter
     
 
     //methods
-    public override bool ApplyFilter()
+    public override bool ApplyFilter(Song song)
     {
-        return true;
+        if(song.GetMood() == _selectedMood)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

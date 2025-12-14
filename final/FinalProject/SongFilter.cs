@@ -15,6 +15,6 @@ public abstract class SongFilter
     
 
     //methods
-    public abstract bool ApplyFilter();
+    public abstract bool ApplyFilter(Song song);
 
 }
