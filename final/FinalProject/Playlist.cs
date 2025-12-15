@@ -28,9 +28,9 @@ public class Playlist
     }
 
     //methods
-    public void AddSong()
+    public void AddSong(Song song)
     {
-        //placeholder
+        _songList.Add(song);
     }
     public void RemoveSong()
     {
@@ -38,7 +38,18 @@ public class Playlist
     }
     public void DisplayPlaylist()
     {
-        //placeholder
+        Console.WriteLine();
+        Console.WriteLine($"===== Playlist: {_playlistName} =====");
+
+        int songNumber = 1;
+
+        foreach(Song song in _songList)
+        {
+            Console.WriteLine($"{songNumber}. {song.GetTitle()} by {song.GetArtist()}");
+            songNumber++;
+        }
+
+        Console.WriteLine("===============================");
     }
 
 }

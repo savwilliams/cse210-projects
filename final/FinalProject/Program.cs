@@ -121,5 +121,7 @@ class Program
             return; 
         }
         energyString = submenuChoicesStrings[energyIndex];
+
+
     }
 }
