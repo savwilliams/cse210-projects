@@ -18,13 +18,40 @@ public class PlaylistGenerator
     }
 
     //methods
-    public void SetFilters()
+    public void SetFilters(List<SongFilter> userFilters)
     {
-        //placeholder
+        _userFilters = userFilters;
     }
-    public void CompilePlaylist()
+    public Playlist CompilePlaylist(int numberOfSongs, string playlistName)
     {
-        //placeholder
+        var query = 
+            from song in _library.GetFullSongList()
+            where SongPassesAllFilters(song)
+            select song;
+
+        List<Song> filteredSongs = query
+            .Take(numberOfSongs)
+            .ToList();
+
+        Playlist playlist = new Playlist(playlistName);
+
+        foreach(Song song in filteredSongs)
+        {
+            playlist.AddSong(song);
+        }
+
+        return playlist;
     }
 
+    private bool SongPassesAllFilters(Song song)
+    {
+        foreach(SongFilter filter in _userFilters)
+        {
+            if(filter.ApplyFilter(song) == false)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
