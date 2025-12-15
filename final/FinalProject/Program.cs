@@ -122,6 +122,27 @@ class Program
         }
         energyString = submenuChoicesStrings[energyIndex];
 
+        //===== Load Song Library ===== 
+        SongLibrary library = new SongLibrary();
+        library.LoadSongs("songs.csv");
 
+        //===== Apply Filters ===== 
+        List<SongFilter> filters = new List<SongFilter>();
+        filters.Add(new MoodFilter(moodString));
+        filters.Add(new GenreFilter(genreString));
+        filters.Add(new EnergyFilter(energyString));
+
+        PlaylistGenerator playlistGenerator = new PlaylistGenerator(library);
+        playlistGenerator.SetFilters(filters);
+
+        //===== Generate/Display Playlist ===== 
+        Console.WriteLine("Name your playlist: ");
+        string playlistName = Console.ReadLine();
+
+        Console.WriteLine("How many songs would you like in your playlist? ");
+        int numberOfSongs = int.Parse(Console.ReadLine());
+
+        Playlist playlist = playlistGenerator.CompilePlaylist(numberOfSongs, playlistName);
+        playlist.DisplayPlaylist();
     }
 }
